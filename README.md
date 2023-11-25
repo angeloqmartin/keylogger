@@ -26,4 +26,5 @@ Prerequisites
 - sounddevice: Python module provides bindings for the PortAudio library and a few convenience functions to play and record NumPy arrays containing audio signals
 <img width="540" alt="PROBLEMS" src="https://github.com/angeloqmartin/keylogger/assets/37564935/7a227692-cd81-4349-af18-5d8ad079f96e">
 
-￼
+Import Python the necessary Modules | Packages | Libraries
+![image](https://github.com/angeloqmartin/keylogger/assets/37564935/d3726b75-7859-4621-920b-764d5c00e0e6)
